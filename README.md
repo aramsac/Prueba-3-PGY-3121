@@ -3,14 +3,15 @@
 - curso: PROGRAMACIÓN WEB
 - *DuocUc*
 
-# comandos para levantar app
+## comandos para levantar app
 - git clone https://github.com/aramsac/Prueba-3-PGY-3121.git
 - .\env\Scripts\activate (windows)
-- source env/Scripts/activate
+- source env/Scripts/activate (linux)
 - pip install -r requirements.txt
+- cd app ; python -m manage runserver (windows)
+- cd app && python3 -m manage runserver (linux)
 
-
-# comandos para crear base del proyecto (windows)
+## comandos para crear base del proyecto (windows)
 - python -m venv env
 - .\env\Scripts\activate
 - pip install django
