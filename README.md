@@ -2,7 +2,6 @@
 - Nombre: Arnoldo Ramos
 - curso: PROGRAMACIÓN WEB
 - *DuocUc*
-<<<<<<< HEAD
 
 # comandos para crear base del proyecto (windows)
 - python -m venv env
@@ -16,6 +15,3 @@
 - sl ..\..\app\static\ ; mkdir js , css , img
 
 - sl ..\..\ ; python -m manage runserver
-=======
-- s
->>>>>>> 9393d8919ea1ceec01d760b046bd3284cf9c38df
