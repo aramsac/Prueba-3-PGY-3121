@@ -16,6 +16,9 @@
     <!-- animacion icono navbar -->
     <link rel="stylesheet" href="{% static 'css/navbar/iconoTienda/icono.css' %}">
 
+    <!-- icono agregar uausrio -->
+    <link rel="stylesheet" href="{% static 'css/navbar/agregar-usuario.css' %}">
+
     <!-- carrusel de imagenes -->
     <link rel="stylesheet" href="{% static 'css/navbar/carrusel/imagenesCarrusel.css' %}">
     
@@ -45,15 +48,35 @@
             <a class="nav-link" href="/productos">Productos</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/signup">crear cuenta</a>
-          </li>
-
-          </li>
 
 
           <li class="nav-item">
-            <a class="nav-link" href="/signup">contacto</a>
+            <a class="nav-link" href="/contacto">contacto</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/mantenedor-contacto">Mantenedor de contacto</a>
+          </li>
+
+          <li class="nav-item">
+            
+            <a class="nav-link" href="/crear-usuario">
+                <strong>
+                    <img class="iconoNavbar" src="{% static '\img\icono\agregar-usuario.png' %}">
+                    <br>
+                    <p>crear usuario</p>
+                </strong>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/crear-cuenta">
+                <strong>
+                    <img class="iconoNavbar" src="{% static '\img\icono\cliente.png' %}">
+                    <br>
+                    <p>Mantenedor Usuario</p>
+                </strong>
+            </a>
           </li>
 
           <li class="nav-item" >
