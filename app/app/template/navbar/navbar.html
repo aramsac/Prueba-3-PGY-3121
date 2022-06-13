@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} asdsda {%  endblock %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap\css\bootstrap.min.css' %}">
+
+    <!-- barra de navegacion responsiva sin bootstrap-->
+    <link rel="stylesheet" href="{% static 'css\Navbar\navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'js\Navbar\navbar.js' %}"></script>
+
+    <!-- animacion icono navbar -->
+    <link rel="stylesheet" href="{% static 'css/navbar/iconoTienda/icono.css' %}">
+
+    <!-- carrusel de imagenes -->
+    <link rel="stylesheet" href="{% static 'css/navbar/carrusel/imagenesCarrusel.css' %}">
+    
+
+</head>
+
+<!-- barra de navegacion -->
+<header>
+  <nav class="navbar navbar-expand-md navbar-ligth fixed-top bg-ligth" id="barraNavegacion" style="background-color: rgb(211, 211, 211);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index">
+
+        <!-- icono tienda -->
+        <img class="iconoTienda" src="{% static 'img\icono\colitta-pets.jpg' %}">
+        <strong></strong>
+      </a>
+      <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/productos">Productos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">crear cuenta</a>
+          </li>
+
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">contacto</a>
+          </li>
+
+          <li class="nav-item" >
+            <a class="nav-link" href="/contacto" >
+              <button class="btn btn-outline-success" style="color:black;position:relative; left:90%;"> hacer Pedido! </button>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+<!--FIN barra de navegacion -->
+
+</header>
+    
+      {% block content %}{%  endblock %}
+      
+
+
+    </script>
+    
+    <script src="{% static 'bootstrap\js\bootstrap.min.js' %}"></script>
+</body>
+</html>
