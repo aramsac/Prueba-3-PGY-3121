@@ -3,6 +3,13 @@
 - curso: PROGRAMACIÓN WEB
 - *DuocUc*
 
+# comandos para levantar app
+- git clone https://github.com/aramsac/Prueba-3-PGY-3121.git
+- .\env\Scripts\activate (windows)
+- source env/Scripts/activate
+- pip install -r requirements.txt
+
+
 # comandos para crear base del proyecto (windows)
 - python -m venv env
 - .\env\Scripts\activate
