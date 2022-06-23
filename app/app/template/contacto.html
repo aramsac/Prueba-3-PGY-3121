@@ -1,0 +1,114 @@
+{% extends "navbar.html" %}formulario de contacto{% load static %}
+{% block content  %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="{% static 'css/formulario-contacto/formulario.css' %}">
+</head>
+<body>
+
+<form class="row g-3 needs-validation" novalidate method="POST" action="/contacto/formulario" style="margin-top:10%;">{% csrf_token %}
+
+     
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Rut</label>
+        <input type="text" name="rut" id="rut" maxlength="13" minlength="11" class="form-control" required oninput="checkRut(this)"  placeholder="Rut  ej: 11111111-1" id="txt_rut">
+        <div class="valid-feedback">
+          valido
+        </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input type="text" name="nombres" class="form-control" id="validationCustom01" value="Mark" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" name="apellido-paterno" class="form-control" id="validationCustom02" value="Otto" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input type="text" name="apellido-materno" class="form-control" id="validationCustom02" value="Otto" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+
+     
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">email</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="email" name="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">telefono</label>
+        <input type="text" name="telefono" class="form-control" id="validationCustom02" value="Otto" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+     <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">asunto</label>
+        <input type="text" name="asunto" class="form-control" id="validationCustom02" value="Otto" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+    </div>
+
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+
+  </form>
+
+</body>
+</html>
+
+<script src="{% static 'js\validar-rut.js' %}"></script>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+  {% endblock %}

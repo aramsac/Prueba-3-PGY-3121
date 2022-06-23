@@ -1,0 +1,29 @@
+.iconoNavbar{
+    width: 30px;
+    margin-left:5%;
+}
+.nav-item{
+    margin-left:0%;
+    padding: 1%;
+    font-size: 50%;
+    transition: padding 2s;
+}
+
+
+.iconoNavbar:hover {
+   
+    /* duracion de la animacion entre menos dure mas vibrara*/
+  padding:5%;
+    
+    
+    /* para que despues de que termina la anomacion se vuelva a realizar usar infinite */
+   
+  }
+    
+  
+
+
+
+@media screen {
+    
+}

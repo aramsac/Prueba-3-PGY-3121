@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{% static 'js\Navbar\navbar.js' %}"></script>
 
+    <!-- estilos general de navbar -->
+    <link rel="stylesheet" href="{% static 'css/navbar/styles.css' %">
+
     <!-- animacion icono navbar -->
     <link rel="stylesheet" href="{% static 'css/navbar/iconoTienda/icono.css' %}">
 
     <!-- icono agregar uausrio -->
-    <link rel="stylesheet" href="{% static 'css/navbar/agregar-usuario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar/iconosNavbar.css' %}">
 
     <!-- carrusel de imagenes -->
     <link rel="stylesheet" href="{% static 'css/navbar/carrusel/imagenesCarrusel.css' %}">
@@ -27,9 +30,9 @@
 
 <!-- barra de navegacion -->
 <header>
-  <nav class="navbar navbar-expand-md navbar-ligth fixed-top bg-ligth" id="barraNavegacion" style="background-color: rgb(211, 211, 211);">
+  <nav class="navbar navbar-expand-md navbar-ligth fixed-top bg-ligth" id="barraNavegacion" style="background-color: rgb(255, 255, 255);">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/index">
+      <a class="navbar-brand" href="/">
 
         <!-- icono tienda -->
         <img class="iconoTienda" src="{% static 'img\icono\colitta-pets.jpg' %}">
@@ -40,41 +43,71 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/index">Home</a>
+          <li class="nav-item" data-bs-toggle="tooltip" data-bs-html="true" title=" inicio ">
+            <a class="nav-link active" aria-current="page" href="/" >
+              <strong>
+                               
+               
+                <img class="iconoNavbar" src="{% static '\img\icono\home.png' %}">
+                
+                <br>
+                <p>Home</p>
+              </strong>
+            </a>
           </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="/productos">Productos</a>
+          <li class="nav-item" data-bs-toggle="tooltip" data-bs-html="true" title=" inicio ">
+            <a class="nav-link" href="/productos">
+              <strong>
+               <img class="iconoNavbar" src="{% static '\img\icono\alimentos-para-mascotas.png' %}" width="1">
+                
+
+                <br>
+                <p>Productos</p>
+            </strong>
+            </a>
           </li>
 
 
 
           <li class="nav-item">
-            <a class="nav-link" href="/contacto">contacto</a>
+            <a class="nav-link" href="/contacto" data-bs-toggle="tooltip" data-bs-html="true">
+              <strong>
+                <img class="iconoNavbar" src="{% static '\img\icono\contacto.png' %}">
+                <br>
+                <p>  contacto</p>
+            </strong>
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/mantenedor-contacto">Mantenedor de contacto</a>
+            <a class="nav-link" href="/mantenedor-contacto">
+              <strong>
+                <img class="iconoNavbar" src="{% static '\img\icono\correo-de-contacto.png' %}">
+                <br>
+                <p>mantenedor <br> contacto</p>
+            </strong>
+              
+            </a>
           </li>
 
           <li class="nav-item">
             
-            <a class="nav-link" href="/crear-usuario">
+            <a class="nav-link" href="/login">
                 <strong>
                     <img class="iconoNavbar" src="{% static '\img\icono\agregar-usuario.png' %}">
-                    <br>
-                    <p>crear usuario</p>
+                   
+                    <p>crear<br>usuario</p>
                 </strong>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/crear-cuenta">
+            <a class="nav-link" href="/usuarios">
                 <strong>
                     <img class="iconoNavbar" src="{% static '\img\icono\cliente.png' %}">
                     <br>
-                    <p>Mantenedor Usuario</p>
+                    <p>Mantenedor<br>Usuario</p>
                 </strong>
             </a>
           </li>
@@ -90,6 +123,10 @@
     </div>
   </nav>
   </header>
+
+
+
+ 
 <!--FIN barra de navegacion -->
 
 </header>

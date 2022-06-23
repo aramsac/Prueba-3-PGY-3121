@@ -1,0 +1,78 @@
+
+
+  {% extends "navbar.html" %}formulario de contacto{% load static %}
+{% block content  %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="{% static 'css/formulario-contacto/formulario.css' %}">
+</head>
+<body>
+
+<form class="row g-3 needs-validation" novalidate method="POST" action="/login/crear-usuario" style="margin-top:10%;">{% csrf_token %}
+
+  
+    <div class="col-md-2 form-floating">
+      <input name="nombre" type="user" class="form-control" id="floatingInput" placeholder="nombre de usuario">
+      <label for="floatingInput">Nombre Uusario</label>
+    </div>
+
+    <div class="col-md-2 form-floating">
+      <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email</label>
+    </div>
+
+    <div class="col-md-2 form-floating">
+      <input name="contrasena" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">crear usuario</button>
+    </div>
+
+
+
+
+
+  </form>
+
+</body>
+</html>
+
+<script src="{% static 'js\validar-rut.js' %}"></script>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+  {% endblock %}

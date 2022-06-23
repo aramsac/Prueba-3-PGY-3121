@@ -1,0 +1,46 @@
+{% extends "navbar.html" %}dgdf{% load static %}
+{% block content  %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <link rel="stylesheet" href="{% static 'css/galeria/productos.css' %}">
+</head>
+<body>
+    
+
+      
+        <div class="container">
+            <h1>Productos</h1>   
+            <hr>
+
+            <div class="card-group"></div>
+            {% for i in api %}
+            
+            <div class="" style="float:left;">
+                <div class="card" style="width:18rem; float: left;margin:10px;">
+                    <img class="card-img-top" src="{{ i.thumbnailUrl }}" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title"> {{ i.title }} </h5>
+                    <p class="card-text">{{ i.price }}</p>
+                    <button class="btn btn-primary"> añadir + </button>
+                    </div>
+                </div>
+            </div>   
+            {% endfor %}
+        </div>
+        </div>
+
+        
+</body>
+</html>
+
+
+
+{% endblock %}
