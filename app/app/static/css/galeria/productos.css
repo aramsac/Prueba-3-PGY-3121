@@ -5,3 +5,9 @@
 .container img{
     object-fit: cover;
 }
+
+@media screen and (max-width:600px){
+   .container{
+    margin-top:220%;
+}
+}

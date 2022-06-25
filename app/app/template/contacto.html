@@ -10,11 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 
+
     <link rel="stylesheet" href="{% static 'css/formulario-contacto/formulario.css' %}">
 </head>
 <body>
 
-<form class="row g-3 needs-validation" novalidate method="POST" action="/contacto/formulario" style="margin-top:10%;">{% csrf_token %}
+<form class="row g-3 needs-validation" novalidate method="POST" action="/contacto/formulario" >{% csrf_token %}
 
      
     <div class="col-md-4">
@@ -26,14 +27,14 @@
     </div>
 
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">First name</label>
+      <label for="validationCustom01" class="form-label">Nombres</label>
       <input type="text" name="nombres" class="form-control" id="validationCustom01" value="Mark" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-4">
-      <label for="validationCustom02" class="form-label">Last name</label>
+      <label for="validationCustom02" class="form-label">apellido paterno</label>
       <input type="text" name="apellido-paterno" class="form-control" id="validationCustom02" value="Otto" required>
       <div class="valid-feedback">
         Looks good!
@@ -41,7 +42,7 @@
     </div>
 
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Last name</label>
+        <label for="validationCustom02" class="form-label">Apellido Materno</label>
         <input type="text" name="apellido-materno" class="form-control" id="validationCustom02" value="Otto" required>
         <div class="valid-feedback">
           Looks good!
@@ -79,7 +80,7 @@
 
 
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit">Guardar Contacto</button>
     </div>
 
   </form>

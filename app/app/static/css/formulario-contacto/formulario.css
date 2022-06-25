@@ -1,3 +1,13 @@
 form{
     padding:5%;
+    padding-top:15%;
 }
+
+
+@media screen and (max-width:600px){
+    form{
+        
+        padding-top: 10%;
+    }  
+    }
+ 

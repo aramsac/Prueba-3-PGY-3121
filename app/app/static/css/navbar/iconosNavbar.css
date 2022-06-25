@@ -19,11 +19,54 @@
     /* para que despues de que termina la anomacion se vuelva a realizar usar infinite */
    
   }
+  
+
+  .navbar-toggler{
+  
+    border-color: rgb(25, 79, 79);
+  }
+  img{
+    width:1000px;
+  }
+  .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(155,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  
+  }
+  
+  .nav-item{
+    position: relative;
     
+    align-items: center;
+    left:50%;
+  }
+  .nav-link .btn{
+    position:relative;
+    top: -5px;
+  }
   
 
 
 
-@media screen {
-    
-}
+  @media screen and (max-width:600px){
+    .iconoNavbar{
+      width: 30px;
+      margin-left:5%;
+  }
+  .nav-item{
+      margin-left:0%;
+      padding: 1%;
+      font-size: 70%;
+      transition: padding 2s;
+  }
+  
+  
+  .iconoNavbar:hover {
+     
+      /* duracion de la animacion entre menos dure mas vibrara*/
+    padding:1%;
+      
+      
+      /* para que despues de que termina la anomacion se vuelva a realizar usar infinite */
+     
+    }
+  }
