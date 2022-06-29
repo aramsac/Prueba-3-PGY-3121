@@ -27,6 +27,7 @@ from app.views.mantenedor_contacto import cargar_contacto
 from app.views.cuenta_usuario import crear_usuario, inicio_seccion
 from app.views.mantenedor_usuario import cargar_usuarios 
 
+from app.views.kk.ejemplo import calculo
 
 
 urlpatterns = [
@@ -38,6 +39,8 @@ urlpatterns = [
     path('mantenedor-contacto', cargar_contacto),
     path('login', inicio_seccion),
     path('login/crear-usuario', crear_usuario),
-    path('usuarios',cargar_usuarios)
+    path('usuarios',cargar_usuarios),
+
+    path('modulo/',calculo)
 
 ]

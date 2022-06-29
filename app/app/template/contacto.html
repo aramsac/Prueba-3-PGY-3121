@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="{% static 'css/formulario-contacto/formulario.css' %}">
 </head>
 <body>
+  
 
 <form class="row g-3 needs-validation" novalidate method="POST" action="/contacto/formulario" >{% csrf_token %}
-
+    
      
     <div class="col-md-4">
+      {{ a }}
         <label for="validationCustom01" class="form-label">Rut</label>
         <input type="text" name="rut" id="rut" maxlength="13" minlength="11" class="form-control" required oninput="checkRut(this)"  placeholder="Rut  ej: 11111111-1" id="txt_rut">
         <div class="valid-feedback">

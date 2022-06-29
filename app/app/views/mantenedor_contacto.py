@@ -1,45 +1,63 @@
+from itertools import count
+from django.http import JsonResponse
 from django.shortcuts import render
 from app.models import Contacto
 
+from django.core.paginator import Paginator
+from django.core import serializers
+
+import math
 def cargar_contacto(request):
 
      
     print('method -> ', request.method)
     if request.method == 'GET':
         try:
-            codigo = request.GET['codigo']
-            print('codigo -> ', codigo)
-            contacto = Contacto.objects.get(pk=codigo)
-            contacto.delete()
+            Contacto.objects.get(pk = request.GET['codigo']).delete()
         except Exception as e:
             print(e)
+
     if request.method == 'POST':
         try:
-            #Lectura Formulario
-            print("el valoe de codigo es >> :" ,request.POST['codigo'])
-            id = request.POST['codigo']
-            nombres = request.POST['nombres']
-            apellido_paterno = request.POST['apellido_paterno']
-            apellido_materno = request.POST['apellido_materno']
-            email = request.POST['email']
-            telefono = request.POST['telefono']            
-            asunto = request.POST['asunto']
-            #Busqueda de objecto en la base de datos
-            contacto = Contacto.objects.get(pk=id)
+       
+            contacto = Contacto.objects.get(pk = request.POST['codigo'])
+
             #Actualizando objeto en memoria volatil
-            contacto.nombres = nombres
-            contacto.apellido_paterno = apellido_paterno
-            contacto.apellido_materno = apellido_materno            
-            contacto.email = email            
-            contacto.telefono = telefono            
-            contacto.asunto = asunto  
+            contacto.nombres            = request.POST['nombres']
+            contacto.apellido_paterno   = request.POST['apellido_paterno']
+            contacto.apellido_materno   = request.POST['apellido_materno']        
+            contacto.email              = request.POST['email']         
+            contacto.telefono           = request.POST['telefono']           
+            contacto.asunto             = request.POST['asunto']
             #Actualizando en la base de datos                      
             contacto.save(force_update=True)
         except Exception as e:
             print(e)
             
-    contactos = Contacto.objects.all
-    return render(request, 'mantenedor-contacto.html', {'contactos': contactos})  
+    
+    #contactos = Contacto.objects.all
+    contactos = Contacto.objects.all()
+    page      = request.GET.get('page', 1)
+    paginator = Paginator( contactos , 2)
+    contactos1 = paginator.page(page)
+
+    
+    data = {
+        'contactos':contactos1,
+        'paginator':paginator
+    }
+    
+    modelo_en_json = serializers.serialize("json", contactos)
+    data_jason = {"respuesta en ": modelo_en_json}
+    #print(" datos en json-->",JsonResponse(data_jason),data_jason)
+    print(data['contactos'])
+
+    """"
+    page      = request.GET.get('page', 1)
+    paginador = Paginator(contactos , 2)
+    contactos  = paginador.page(page)
+    """
+    return render(request, 'mantenedor-contacto.html', { "contactos_json":data_jason , "contactos":data['contactos'],'paginator':data['paginator'] })  
 
          
 

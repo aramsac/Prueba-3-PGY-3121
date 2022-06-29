@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from app.models import Contacto
 
+from app.modulo1.calcular import calcular  
+
 def contacto(request):
-    return render(request,'contacto.html')
+    p = calcular(10,20)
+    print(" asdkakdjask -->", p)
+    return render(request,'contacto.html',{'a':p})
 
 def formulario_contacto(request):
     print('form de contacto',Contacto)
