@@ -7,7 +7,7 @@ def cargar_usuarios(request):
 
     if request.method == "GET":
         try:
-            
+            auth , error = authorization(request,'delete_usuario')
             Usuario.objects.get(pk=request.GET['codigo']).delete()
         except Exception as e:
             print(e)
