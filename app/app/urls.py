@@ -27,17 +27,33 @@ from app.views.mantenedor_contacto import cargar_contacto
 from app.views.cuenta_usuario import crear_usuario, inicio_seccion
 from app.views.mantenedor_usuario import cargar_usuarios 
 
+""" para el login """
+from app.views import login 
+from app.views import logout
+from django.contrib.auth.models import Permission, ContentType
+from app.models import Contacto
+from app.models import Usuario
+
+admin.site.register(Permission)
+admin.site.register(ContentType)
+admin.site.register(Contacto)
+admin.site.register(Usuario)
+
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index) ,
+    path('index/',index) ,
     path('productos/' , productos),
     path('contacto/' , contacto),
     path('contacto/formulario' , formulario_contacto),
     path('mantenedor-contacto', cargar_contacto),
     path('login', inicio_seccion),
     path('login/crear-usuario', crear_usuario),
-    path('usuarios',cargar_usuarios)
+    path('usuarios',cargar_usuarios),
+    path('loginAdmin', login.index),
+    path('logout/', logout.logout_user),
 
 ]

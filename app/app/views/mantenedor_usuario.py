@@ -1,11 +1,13 @@
 from wsgiref.util import request_uri
 from django.shortcuts import render
 from app.models import  Usuario
+from app.views.login import authorization
 
 def cargar_usuarios(request):
 
     if request.method == "GET":
         try:
+            
             Usuario.objects.get(pk=request.GET['codigo']).delete()
         except Exception as e:
             print(e)

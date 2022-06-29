@@ -45,6 +45,22 @@
   }
   
 
+  #cerrarSeccion{
+    position:relative;
+    left:0%;
+    left:0;
+    top:0px;
+
+  }
+  #iniciarSeccion{
+    position:relative;
+    left:0%;
+    position: absolute;
+    left:0;
+    top:0px;
+  }
+  
+
 
 
   @media screen and (max-width:600px){
@@ -53,13 +69,24 @@
       margin-left:5%;
   }
   .nav-item{
+      height:100px;
       margin-left:0%;
+      margin-top: -25px;
       padding: 1%;
       font-size: 70%;
       transition: padding 2s;
   }
-  
-  
+
+  .nav-item #cerrarSeccion{
+    position: absolute;
+    left:0;
+    top:0px;
+  }
+  #iniciarSeccion{
+    position: absolute;
+    left:0;
+    top:0px;
+  }
   .iconoNavbar:hover {
      
       /* duracion de la animacion entre menos dure mas vibrara*/

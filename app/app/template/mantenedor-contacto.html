@@ -1,5 +1,10 @@
 {% extends "navbar.html" %}formulario de contacto{% load static %}
 {% block content  %}
+
+<!-- para la autentificacion -->
+{% if perms.app.view_contacto %} 
+
+
 <link rel="stylesheet" href="{% static 'css/tablas/tablaMantenedor.css' %}">
 
 
@@ -30,6 +35,7 @@
                         </tr>
                       </thead>
                       <tbody>
+
                         {% for i in contactos %}
                         <tr>
                             <th scope="row">{{ i.codigo }}</th>
@@ -40,7 +46,9 @@
                             <td>{{ i.email }}</td>
                             <td>{{ i.telefono }}</td>
                             <td>{{ i.asunto }}</td>
+                           
                           
+                          {% if perms.app.change_contacto %}
                           <td>                           
                             <img class="iconoTabla" src="{% static 'img/iconos-tabla/boton-editar.png' %}"
                                 data-bs-toggle="modal" 
@@ -139,8 +147,8 @@
                               </div>
                               <!-- fin del modal actualizar -->
                           </td>
-
-
+                          {% endif %}
+                          {% if perms.app.delete_contacto %}
                           <td>
                             <img class="iconoTabla" src="{% static 'img/iconos-tabla/eliminar.png' %}"
                                 data-bs-toggle="modal"
@@ -181,6 +189,8 @@
 
                           </td>
                         </tr>
+                        {% endif %}
+                        
 
                         
                        {% endfor %}
@@ -222,4 +232,6 @@
   })
 })()
 </script>
+
+{% endif %}
 {% endblock %}

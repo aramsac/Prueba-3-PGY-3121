@@ -80,16 +80,6 @@
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/mantenedor-contacto">
-              <strong>
-                <img class="iconoNavbar" src="{% static '\img\icono\correo-de-contacto.png' %}">
-                <br>
-                <p>mantenedor <br> contacto</p>
-            </strong>
-              
-            </a>
-          </li>
 
           <li class="nav-item">
             
@@ -102,6 +92,26 @@
             </a>
           </li>
 
+          <li class="nav-item" >
+            <a class="nav-link" href="/contacto" >
+              <button class="btn btn-outline-success" id="hacerPedido" style="color:black;position:relative; left:0%;"> hacer Pedido! </button>
+            </a>
+          </li>
+
+          {% if user.is_authenticated %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="/mantenedor-contacto">
+              <strong>
+                <img class="iconoNavbar" src="{% static '\img\icono\correo-de-contacto.png' %}">
+                <br>
+                <p>mantenedor <br> contacto</p>
+            </strong>
+              
+            </a>
+          </li>
+
+
           <li class="nav-item">
             <a class="nav-link" href="/usuarios">
                 <strong>
@@ -112,11 +122,26 @@
             </a>
           </li>
 
+
           <li class="nav-item" >
-            <a class="nav-link" href="/contacto" >
-              <button class="btn btn-outline-success" style="color:black;position:relative; left:90%;"> hacer Pedido! </button>
+            <a class="nav-link" href="/logout" >
+              <button class="btn btn-outline-success" id="cerrarSeccion">cerrar seccion</button>
             </a>
           </li>
+
+          {% else %}
+
+
+
+          <li class="nav-item" >
+            <a class="nav-link" href="/loginAdmin" >
+              <button class="btn btn-outline-success" id="inicarSeccion"> inicio seccion</button>
+            </a>
+          </li>
+
+          {% endif %}
+
+         
 
         </ul>
       </div>
